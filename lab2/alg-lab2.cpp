@@ -1,83 +1,93 @@
 #include <iostream>
-#include <cmath>
+#include <cmath>                    //подключил для pow
 using namespace std;
 
+
+//функция для базового уровня
 void base()
 {
-    double hour;
-    cout << "Введите количество часов" << "\n";
-    cin >> hour;
-    if (cin.fail() || hour<0)
+    double hour;                     //объявил переиеннную
+    cout << "Введите количество часов" << "\n";             // предложение ввода
+    cin >> hour;                                    // ввод
+    if (cin.fail() || hour<0)                       //проверка ввода
     {
-        cout << "Неверный тип данных, введите положительное число" << "\n";
+        cout << "Неверный тип данных, введите положительное число" << "\n";   //сообщение об ошибке ввода
         cin.clear();
         cin.ignore(10000,'\n');
-        return;
+        return;                                 
     }
-    int minutes{static_cast<int>(hour*60)};
-    cout << "Количество минут = " << minutes << "\n";
+    int minutes{static_cast<int>(hour*60)};                 // инициализация переменной и ее расчет
+    cout << "Количество минут = " << minutes << "\n";                   //вывод результата
 }
 
+
+
+// функция для среднего уровня
 void medium()
 {
-    double pi{3.1415};
+    double pi{3.1415};              //объявлление переменных
     double R,h;
-    cout << "Введите радиус и высоту" << "\n";
-    cin >> R >> h;
-    if (cin.fail() || h<=0 || R<=0)
+    cout << "Введите радиус и высоту" << "\n";          //предложение ввода
+    cin >> R >> h;                                      // ввод
+    if (cin.fail() || h<=0 || R<=0)                     // проверка ввода
     {
-        cout << "Неверный тип данных, введите положительные числа" << "\n";
+        cout << "Неверный тип данных, введите положительные числа" << "\n";         //предупреждение об ошибке ввода
         cin.clear();
         cin.ignore(10000,'\n');
         return;
     }
-    double V{pi*static_cast<double>(R*R)*h};
-    cout << "Объем цилиндра = " << V << "\n";
+    double V{pi*static_cast<double>(R*R)*h};                //инициализация переменной и ее расчет с явным объявлением типа данных
+    cout << "Объем цилиндра = " << V << "\n";           //вывод
 }
 
+
+
+// функция для повышенного уровня
 void advanced()
 {
-    double x;
+    double x;               //объявление переменных
     int y;
-    cout << "Введите числа x и y" << "\n";
-    cin >> x >> y;
-    if (cin.fail())
+    cout << "Введите числа x и y" << "\n";              // предложение ввода
+    cin >> x >> y;                  //ввод
+    if (cin.fail())                     //проверка ввода
     {
         cin.clear();
         cin.ignore(10000,'\n');
         cout << "Неверный тип данных, введите числа";
         return;
     }
-    double result{pow(x,static_cast<double>(y))};
-    cout << "Результат: " << result << "\n";
+    double result{pow(x,static_cast<double>(y))};                       //инициализация переменной и ее расчет с явным приведением
+    cout << "Результат: " << result << "\n";            //вывод
 }
 
+
+
 int main(){
-    int task_level;
-    cout << "Выберите уровень задания" << "\n" << "1 - базовый" << "\n" << "2 - средний" << "\n" << "3 - повышенный" << "\n";
-    cin >> task_level;
-    if (cin.fail())
+    int task_level;     //переменная для выбора уровня программы
+    cout << "Выберите уровень задания" << "\n" << "1 - базовый" << "\n" << "2 - средний" << "\n" << "3 - повышенный" << "\n";       //предложение выбора уровня программы
+    cin >> task_level;      //ввод
+    if (cin.fail())             //проверка ввода
     {
         cout << "Неверный тип данных";
         cin.clear();
         cin.ignore(10000,'\n');
-        //return;
+        return 0;
     }
-    if (task_level==1)
+    if (task_level==1)          //если ввели увроень 1
     {
         base();
     }
-    else if (task_level == 2)
+    else if (task_level == 2)           //если ввели увроень 2
     {
         medium();
     }
-    else if (task_level == 3)
+    else if (task_level == 3)           //если ввели увроень 3
     {
         advanced();
     }
-    else
+    else                                //если ввели что-то другое
     {
-        cout << "Неверный ввод, введите 1 или 2 или 3" << "\n";
+        cout << "Неверный ввод, введите 1 или 2 или 3" << "\n";         //сообщение об ошибке
     }
     return 0;
 }
