@@ -1,0 +1,13 @@
+.grid{
+    width: 360px;
+    margin-left: 380px;
+    margin-top: 180px;
+}
+
+.block{
+    display: inline-block;
+    width: 99px;
+    height: 99px;
+    background-color: cadetblue;
+    margin: 9px;
+}
