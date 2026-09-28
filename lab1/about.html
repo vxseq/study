@@ -9,35 +9,50 @@
     <title>Обо мне</title>
 </head>
 <body>
-    <h1>Обо мне</h1>
-    <hr>
-    <h2>Биография</h2>
-    <p>Судент. Делаю лаболаторную по введению во фронтед</p>
-    <br>
-    <h2>Навыки</h2>
-    <ol>
-        <li>
-            Программирование
+    <header>
+        <h1>Обо мне</h1>
+        <nav>
             <ul>
-                <li>C++</li>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="about.html">Обо мне</a></li>
+                <li><a href="friends.html">Друзья</a></li>
+                <li><a href="hobbies.html">Увлечения</a></li>
+                <li><a href="group.html">Группа</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <a href="#skills">Перейти к навыкам</a>
+        <section>
+            <h2>Обо мне</h2>
+            <article>
+                <h3>Обо мне</h3>
+                <img src="imagesl/IMG_3375.jpg" alt="Моя фотография" width="300" height="300">
+                <p>
+                    Меня зовут Николай. Я студент, изучаю программирование. 
+                </p>
+            </article>
+        </section>
+        <section>
+            <h2 id="skills">навыки</h2>
+            <p>Я изучаю:</p>
+            <ul>
                 <li>Python</li>
-                <li>Assembler</li>
+                <li>C++</li>
+                <li>HTML</li>
+                <li>CSS</li>
             </ul>
-        </li>
-        <li>
-            Веб-разработка
-            <ul>
-                <li>html</li>
-                <li>css</li>
-            </ul>
-        </li>
-    </ol>
-    <dl>
-        <dt>Python</dt>
-        <dd>Прост</dd>
-        <dt>C++</dt>
-        <dd>Алгоритмы</dd>
-    </dl>
-    <hr>
+
+        </section>
+        <aside>
+            <h2>Мои проекты</h2>
+            <p>Мои проекты можно посмотреть на <a href="https://github.com/vxseq" target="_blank" rel="noopener noreferrer"</p>
+
+        </aside>
+
+    </main>
+    <footer>
+        <p>Мой сайт</p>
+    </footer>
 </body>
 </html>
