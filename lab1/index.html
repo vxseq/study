@@ -1,16 +1,17 @@
 <!--index.html-->
 
-<html>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <title>Мой сайт</title>
 </head>
 <body>
     <header>
-        <h1>Мой сайт</h1>
+        <h1 id="logo">Мой сайт</h1>
         <nav>
             <ul>
                 <li><a href="index.html">Главная</a></li>
@@ -24,8 +25,9 @@
     <main>
         <section>
             <h2>Дорбро пожаловать</h2>
-            <p>Добро пожаловать на мой сайт</p>
-            <img src="imagesl/IMG_4793.jpg" alt="Логотип моего сайта" width="300" height="200">
+            <p class="important">Добро пожаловать на мой сайт!</p>
+            <img src="imagesl/IMG_4793.jpg" alt="Логотип моего сайта" width="400" height="300">
+            <p>На этом сайте вы найдете <span class="highlight">информацию обо мне</span>.</p>
         </section>
         <article>
             <h2>О сайте</h2>
@@ -37,11 +39,14 @@
                 Мои проекты можно посмотреть на 
                 <a href="https://github.com/vxseq" target="_blank" rel="noopener noreferrer">гитхаб</a>
             </p>
+            <blockquote>
+                Добро пожаловать на мой личный сайт!
+            </blockquote>
         </aside>
 
     </main>
     <footer>
-        <p>мой сайт</p>
+        <p>Мой сайт</p>
     </footer>
 </body>
 </html>

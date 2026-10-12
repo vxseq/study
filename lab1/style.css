@@ -1,0 +1,208 @@
+/*переменные для основных цветов сайта*/
+:root {
+    --main-color: #20c292;
+    --text-color: #333333;
+    --background-color: #f5f7fa;
+}
+
+/*основные найстроки страницы*/
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    line-height: 1.5;
+}
+
+/*оформление заголовка*/
+h1 {
+    font-size: 2rem;
+    color: #1d4ed8;
+}
+
+/*оформление заголовка*/
+h2 {
+    font-size: 1.5rem;
+    color: #20dc17;
+}
+
+/*оформление заголовка*/
+h3 {
+    font-size: 1.25rem;
+    color: #7d18d5;
+}
+
+/*оформление обычного текста*/
+p {
+    text-align: justify;
+    line-height: 1.5;
+}
+
+/*маркеры списка*/
+ul {
+    list-style-type: square;
+}
+
+/*стиль ссылок*/
+a {
+    color: #c477d8;
+    text-decoration: none;
+}
+
+/*изменение ссылок при наведении*/
+a:hover {
+    color: var(--main-color);
+    text-decoration: underline;
+}
+
+
+/*изменение ссылок при нажатии*/
+a:active {
+    color: #0daa46;
+}
+
+
+/*цыет посещенных ссылок*/
+a:visited {
+    color: #7e7784;
+}
+
+
+/*оформление важного текста*/
+.important {
+    color: red;
+    font-weight: bold;
+}
+
+
+/*выделение текста*/
+.highlight {
+    background-color: yellow;
+}
+
+
+/*оформление цитат*/
+blockquote {
+    border-left: 4px solid #618eed;
+    padding-left: 15px;
+    font-style: italic;
+    color: #555555;
+}
+
+
+/*оформление заголовка*/
+h4 {
+    font-size: 1.1rem;
+    color: #d8660f;
+}
+
+
+/*оформление заголовка*/
+h5 {
+    font-size: 1rem;
+    color: #0996ba;
+}
+
+
+/*оформление заголовка*/
+h6 {
+    font-size: 0.9rem;
+    color: #78849c;
+}
+
+
+/*оформление верхней части сайта*/
+header {
+    background-color: #dbeafe;
+    padding: 20px;
+    border-bottom: 2px solid #e35b8d;
+}
+
+
+/*оформление навигации*/
+nav {
+    background-color: #bfdbfe;
+    padding: 10px;
+}
+
+
+/*оформление основного содержимого странницы*/
+main {
+    padding: 20px;
+}
+
+
+/*оформление разделов*/
+section {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #d1d5db;
+}
+
+
+/*оформление статей*/
+article {
+    background-color: #f0fdf4;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #86efac;
+}
+
+
+/*оформление дополнительной информации*/
+aside {
+    background-color: #fef3c7;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #e4be7c;
+}
+
+
+/*оформление подвала*/
+footer {
+    background-color: #e5e7eb;
+    padding: 15px;
+    text-align: center;
+    border-top: 2px solid #acb4c1;
+}
+
+
+/*рассположение пунктов меню в одну строку*/
+nav ul {
+    display: flex;
+    gap: 25px;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
+}
+
+
+/*выделение ссылок в меню*/
+nav a {
+    font-weight: bold;
+}
+
+
+/*оформление логотипа*/
+#logo {
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+
+/*оформление изображений*/
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+
+/*эффект при наведении на пункты меню*/
+nav a:hover {
+    background-color: #ffffff;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
