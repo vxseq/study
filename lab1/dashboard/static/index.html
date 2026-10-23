@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Проектный дашборд</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="/static/app.js" defer></script>
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <a class="brand" href="/" aria-label="Главная">
+        <span class="brand-icon">▦</span><span>project<span class="brand-accent">flow</span><small>Панель управления</small></span>
+      </a>
+      <p class="side-label">РАБОЧЕЕ ПРОСТРАНСТВО</p>
+      <nav aria-label="Основное меню">
+        <a class="side-link active" href="/">▦ <span>Обзор проектов</span></a>
+        <a class="side-link" href="#tasks-section">☷ <span>Задачи</span></a>
+        <button class="side-link" type="button" id="side-users">♙ <span>Участники</span></button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="side-help"><span class="help-icon">?</span><span><b>Учебный проект</b><small>FastAPI + SQLite</small></span></div>
+        <a class="side-doc" href="/docs" target="_blank" rel="noopener">Открыть API документацию ↗</a>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div class="breadcrumbs">Рабочее пространство <span>/</span> <b>Дашборд</b></div>
+        <div class="topbar-right"><span class="online-dot"></span> Система работает <span class="top-divider"></span><span class="avatar">P</span></div>
+      </header>
+
+      <div class="content">
+        <div class="page-heading">
+          <div><p class="eyebrow">ПАНЕЛЬ УПРАВЛЕНИЯ</p><h1>Обзор проектов</h1><p class="subtitle">Следите за ходом проектов, сроками и задачами команды.</p></div>
+          <button class="btn btn-primary" type="button" id="add-project">＋ Новый проект</button>
+        </div>
+
+        <section class="metrics" aria-label="Статистика">
+          <article class="metric"><div class="metric-top">Всего проектов <span class="metric-icon purple">▦</span></div><strong id="count-all">0</strong><small>В вашем рабочем пространстве</small></article>
+          <article class="metric"><div class="metric-top">В сроке <span class="metric-icon green">✓</span></div><strong id="count-good">0</strong><small><span class="little-dot green-dot"></span> Без критических проблем</small></article>
+          <article class="metric"><div class="metric-top">Есть риски <span class="metric-icon yellow">◷</span></div><strong id="count-risk">0</strong><small><span class="little-dot yellow-dot"></span> Просрочены сроки задач</small></article>
+          <article class="metric"><div class="metric-top">Блокеры <span class="metric-icon red">!</span></div><strong id="count-blocked">0</strong><small><span class="little-dot red-dot"></span> Требуется внимание</small></article>
+        </section>
+
+        <section class="panel" aria-labelledby="projects-heading">
+          <div class="panel-head"><div><h2 id="projects-heading">Проекты <span id="project-total" class="counter">0</span></h2><p>Все активные проекты команды</p></div><div class="controls"><input type="search" id="search-projects" placeholder="⌕  Найти проект..." aria-label="Поиск проекта"><select id="filter-status" aria-label="Фильтр статусов"><option value="all">Все статусы</option><option>В сроке</option><option>Есть риски</option><option>Блокер</option></select></div></div>
+          <div class="project-grid" id="project-grid" aria-live="polite"></div>
+        </section>
+
+        <section class="panel tasks-panel" id="tasks-section" aria-labelledby="tasks-heading">
+          <div class="panel-head"><div><h2 id="tasks-heading">Задачи <span id="task-total" class="counter">0</span></h2><p id="task-subtitle">По всем проектам</p></div><div class="controls"><select id="task-project-filter" aria-label="Выбрать проект"><option value="all">Все проекты</option></select><button class="btn btn-outline" type="button" id="add-task">＋ Добавить задачу</button></div></div>
+          <div class="table-scroll"><table><thead><tr><th>ЗАДАЧА</th><th>ПРОЕКТ</th><th>ИСПОЛНИТЕЛЬ</th><th>ДЕДЛАЙН</th><th>СТАТУС</th><th class="actions-col">ДЕЙСТВИЯ</th></tr></thead><tbody id="task-rows"></tbody></table></div>
+        </section>
+        <footer>Учебный проект «Дашборд проектов внедрения» · <span id="year"></span></footer>
+      </div>
+    </main>
+  </div>
+
+  <dialog id="project-dialog" class="modal"><form id="project-form"><div class="modal-head"><div><p class="eyebrow">ПРОЕКТ</p><h2 id="project-dialog-title">Новый проект</h2></div><button type="button" class="close-modal" data-close="project-dialog" aria-label="Закрыть">×</button></div><input type="hidden" name="id"><label>Название проекта <span>*</span><input name="name" type="text" maxlength="120" required placeholder="Например, Внедрение CRM"></label><label>Описание<textarea name="description" rows="3" placeholder="Коротко о проекте"></textarea></label><div class="modal-footer"><button type="button" class="btn btn-outline" data-close="project-dialog">Отмена</button><button type="submit" class="btn btn-primary">Сохранить</button></div></form></dialog>
+
+  <dialog id="task-dialog" class="modal"><form id="task-form"><div class="modal-head"><div><p class="eyebrow">ЗАДАЧА</p><h2 id="task-dialog-title">Новая задача</h2></div><button type="button" class="close-modal" data-close="task-dialog" aria-label="Закрыть">×</button></div><input type="hidden" name="id"><label>Название задачи <span>*</span><input name="title" required maxlength="160" placeholder="Например, Настроить сервер"></label><label>Описание<textarea name="description" rows="2" placeholder="Что нужно сделать"></textarea></label><div class="field-row"><label>Проект <span>*</span><select name="project_id" required></select></label><label>Исполнитель<select name="user_id"><option value="">Не назначен</option></select></label></div><div class="field-row"><label>Дедлайн<input type="datetime-local" name="deadline"></label><label>Статус<select name="status"><option>В работе</option><option>Готово</option><option>Блокер</option></select></label></div><div class="modal-footer"><button type="button" class="btn btn-outline" data-close="task-dialog">Отмена</button><button type="submit" class="btn btn-primary">Сохранить</button></div></form></dialog>
+
+  <dialog id="user-dialog" class="modal"><form id="user-form"><div class="modal-head"><div><p class="eyebrow">КОМАНДА</p><h2>Участники</h2></div><button type="button" class="close-modal" data-close="user-dialog" aria-label="Закрыть">×</button></div><div id="users-list" class="users-list"></div><h3>Добавить участника</h3><label>Имя <span>*</span><input name="name" required maxlength="120" placeholder="Имя Фамилия"></label><label>Роль <span>*</span><input name="role" required maxlength="120" placeholder="Например, Аналитик"></label><div class="modal-footer"><button type="button" class="btn btn-outline" data-close="user-dialog">Закрыть</button><button type="submit" class="btn btn-primary">Добавить</button></div></form></dialog>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

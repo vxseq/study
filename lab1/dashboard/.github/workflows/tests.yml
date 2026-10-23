@@ -1,0 +1,25 @@
+name: Проверка дашборда
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: lab1/backend/dashboard
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Установить зависимости
+        run: pip install -r requirements-dev.txt
+      - name: Проверить форматирование
+        run: black .
+      - name: Проверить код
+        run: ruff check .
+      - name: Запустить тесты
+        run: python -m pytest -q
