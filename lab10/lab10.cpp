@@ -1,5 +1,6 @@
 #include<iostream>
 #include <fstream>      //для чтения файла
+#include<string>            //для названия файла 
 using namespace std;
 
 
