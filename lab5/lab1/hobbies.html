@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Увлечения</title>
+</head>
+<body>
+    <header>
+        <h1>Мои увлечения</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="about.html">Обо мне</a></li>
+                <li><a href="friends.html">Друзья</a></li>
+                <li><a href="hobbies.html">Увлечения</a></li>
+                <li><a href="group.html">Группа</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="accordion" aria-labelledby="hobbies-title">
+            <h2 class="accordion__title" id="hobbies-title">Мои увлечения</h2>
+            <p>В свободное время я играю и слушаю музыку.</p>
+            <div class="accordion__items">
+                <details class="accordion__item" name="hobbies">
+                    <summary class="accordion__summary" tabindex="0">Компьютерные игры</summary>
+                    <div class="accordion__panel">
+                        <div class="accordion__content">
+                            <p>Я играю в Dota 2 с друзьями.</p>
+                            <img class="accordion__image" src="imagesl/IMG_5051.JPG"
+                                alt="Персонаж Shadow Fiend из Dota 2" width="400" height="400">
+                        </div>
+                    </div>
+                </details>
+                <details class="accordion__item" name="hobbies">
+                    <summary class="accordion__summary" tabindex="0">Музыка</summary>
+                    <div class="accordion__panel">
+                        <div class="accordion__content">
+                            <p>Я слушаю музыку на SoundCloud.</p>
+                            <img class="accordion__image" src="imagesl/IMG_5052.PNG"
+                                alt="" width="400" height="400">
+                        </div>
+                    </div>
+                </details>
+            </div>
+        </section>
+        <aside>
+            <h2>Интересный факт</h2>
+            <p>Отсутствует</p>
+        </aside>
+    </main>
+    <footer>
+        <p>Мой сайт</p>
+    </footer>
+</body>
+</html>
