@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Обо мне</title>
+</head>
+<body>
+    <header>
+        <h1>Обо мне</h1>
+        <nav aria-label="Главное меню">
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="about.html" aria-current="page">Обо мне</a></li>
+                <li><a href="friends.html">Друзья</a></li>
+                <li><a href="hobbies.html">Увлечения</a></li>
+                <li><a href="group.html">Группа</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Обо мне</h2>
+            <article class="about-layout">
+                <img src="imagesl/IMG_3375.jpg" alt="Моя фотография" width="400" height="300">
+                <p>
+                    Меня зовут Николай. Я студент, изучаю программирование. 
+                </p>
+            </article>
+        </section>
+        <section>
+            <h2 id="skills">Навыки</h2>
+            <p>Я изучаю:</p>
+            <ul class="card-grid">
+                <li>Python</li>
+                <li>C++</li>
+                <li>HTML</li>
+                <li>CSS</li>
+            </ul>
+
+        </section>
+
+    </main>
+    <aside class="page-links" aria-label="Связанные страницы">
+        <h2>Ещё на сайте</h2>
+        <ul class="card-grid">
+            <li><a href="group.html">Группа</a></li>
+            <li><a href="hobbies.html">Увлечения</a></li>
+        </ul>
+    </aside>
+    <aside class="page-notes" aria-label="Дополнительная информация">
+        <h2>Проекты</h2>
+        <p>Мои проекты можно посмотреть на <a href="https://github.com/vxseq" target="_blank" rel="noopener noreferrer">GitHub</a></p>
+
+    </aside>
+    <footer>
+        <p>Мой сайт</p>
+    </footer>
+</body>
+</html>

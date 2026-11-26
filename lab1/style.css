@@ -121,6 +121,10 @@ header {
 
 /*оформление навигации*/
 nav {
+    display:flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
     background-color: #bfdbfe;
     padding: 10px;
 }
@@ -128,7 +132,9 @@ nav {
 
 /*оформление основного содержимого странницы*/
 main {
+    background-color: #f8fafc;
     padding: 20px;
+    border: 1px solid #e2e8f0;
 }
 
 
@@ -205,4 +211,109 @@ nav a:hover {
     background-color: #ffffff;
     padding: 5px 10px;
     border-radius: 5px;
+}
+
+
+.about-layout{
+    display:grid;
+    grid-template-columns: 250px 1fr;
+    gap: 20px;
+}
+
+
+.about-layout img{
+    max-width: 100%;
+}
+
+
+.friends-list{
+    display: flex;
+    flex-wrap:wrap;
+    gap:20px;
+}
+
+
+.friend-card{
+    flex: 1 1 200px;
+}
+
+
+.home-blocks{
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+}
+
+
+.home-blocks > *{
+    flex: 1 1 200px;
+}
+
+.accordion__title {
+    color: #172554;
+}
+
+.accordion__items {
+    display: grid;
+    gap: 12px;
+    max-width: 640px;
+}
+
+.accordion__item {
+    background-color: #f8fafc;
+    border: 1px solid #94a3b8;
+    border-radius: 10px;
+}
+
+.accordion__summary {
+    padding: 12px 16px;
+    border-radius: 9px;
+    color: #172554;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.accordion__summary::marker {
+    color: #1d4ed8;
+}
+
+.accordion__summary:hover,
+.accordion__item[open] > .accordion__summary {
+    background-color: #dbeafe;
+}
+
+.accordion__summary:active {
+    background-color: #bfdbfe;
+}
+
+.accordion__summary:focus {
+    outline: 3px solid #1d4ed8;
+    outline-offset: 2px;
+}
+
+.accordion__panel {
+    display: grid;
+    grid-template-rows: 1fr;
+}
+
+.accordion__content {
+    min-height: 0;
+    overflow: hidden;
+    padding-inline: 16px;
+}
+
+.accordion__image {
+    display: block;
+    margin-bottom: 16px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .accordion__item[open] > .accordion__panel {
+        animation: accordion-expand 260ms ease-out;
+    }
+}
+
+@keyframes accordion-expand {
+    from { grid-template-rows: 0fr; }
+    to { grid-template-rows: 1fr; }
 }

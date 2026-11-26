@@ -1,0 +1,160 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 170px minmax(0, 1fr) 190px;
+    grid-template-areas:
+        "header header header"
+        "links main notes"
+        "footer footer footer";
+    gap: 16px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px;
+    font: 1rem/1.5 Arial, sans-serif;
+    color: #172554;
+    background: #f5f7fa;
+}
+
+header {
+    grid-area: header;
+    text-align: center;
+    background: #dbeafe;
+}
+
+main {
+    grid-area: main;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+main > * {
+    flex: 1 1 240px;
+    min-width: 0;
+}
+
+.page-links {
+    grid-area: links;
+}
+
+.page-notes {
+    grid-area: notes;
+}
+
+footer {
+    grid-area: footer;
+    text-align: center;
+    background: #dbeafe;
+}
+
+header, footer, main > *, aside {
+    padding: 16px;
+    border-radius: 8px;
+}
+
+main > *, aside {
+    background: #fff;
+    border: 1px solid #d1dbe8;
+}
+
+h1, h2 {
+    margin: 0 0 12px;
+}
+
+h2 {
+    font-size: 1.2rem;
+}
+
+a {
+    color: #1741a6;
+}
+
+nav ul, .card-grid, .friends-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+}
+
+nav a {
+    display: block;
+    padding: 6px 10px;
+}
+
+nav a[aria-current="page"] {
+    border-radius: 6px;
+    background: #bfdbfe;
+    font-weight: bold;
+}
+
+.about-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: start;
+    gap: 12px;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(105px, 1fr));
+    gap: 10px;
+}
+
+.friends-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.friends-list > li {
+    flex: 1 1 145px;
+}
+
+.card-grid > li, .friends-list > li {
+    padding: 10px;
+    border-radius: 6px;
+    background: #eef4ff;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+}
+
+@media (max-width: 800px) {
+    body {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        grid-template-areas:
+            "header header"
+            "main main"
+            "links notes"
+            "footer footer";
+    }
+}
+
+@media (max-width: 540px) {
+    body {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-areas: "header" "main" "links" "notes" "footer";
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    .about-layout {
+        grid-template-columns: 1fr;
+    }
+}
