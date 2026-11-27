@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Группа</title>
+</head>
+<body>
+    <header>
+        <h1>Моя группа</h1>
+        <nav class="desktop-menu" aria-label="Главное меню">
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="about.html">Обо мне</a></li>
+                <li><a href="friends.html">Друзья</a></li>
+                <li><a href="hobbies.html">Увлечения</a></li>
+                <li><a href="group.html" aria-current="page">Группа</a></li>
+            </ul>
+        </nav>
+        <details class="mobile-menu">
+            <summary><span aria-hidden="true">☰</span> Меню</summary>
+            <nav aria-label="Главное меню">
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="about.html">Обо мне</a></li>
+                    <li><a href="friends.html">Друзья</a></li>
+                    <li><a href="hobbies.html">Увлечения</a></li>
+                    <li><a href="group.html" aria-current="page">Группа</a></li>
+                </ul>
+            </nav>
+        </details>
+    </header>
+    <main>
+        <section>
+            <h2>Моя группа</h2>
+            <article>
+                <p>Я учусь в группе ПИЖ-б-о-26-1(2)</p>
+                <p class="table-hint" id="table-hint">На узком экране таблицу можно прокрутить вправо.</p>
+                <div class="table-scroll" tabindex="0" role="region" aria-labelledby="group-table" aria-describedby="table-hint">
+                    <table>
+                        <caption id="group-table">Состав группы</caption>
+                        <thead>
+                            <tr><th scope="col">№</th><th scope="col">Участник</th><th scope="col">Учебная группа</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>1</td><td>Студент 1</td><td>ПИЖ-б-о-26-1(2)</td></tr>
+                            <tr><td>2</td><td>Студент 2</td><td>ПИЖ-б-о-26-1(2)</td></tr>
+                            <tr><td>3</td><td>Студент 3</td><td>ПИЖ-б-о-26-1(2)</td></tr>
+                            <tr><td>4</td><td>Студент 4</td><td>ПИЖ-б-о-26-1(2)</td></tr>
+                            <tr><td>5</td><td>Студент 5</td><td>ПИЖ-б-о-26-1(2)</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </article>
+        </section>
+
+    </main>
+    <aside class="page-links" aria-label="Связанные страницы">
+        <h2>Ещё на сайте</h2>
+        <ul class="card-grid">
+            <li><a href="about.html">Обо мне</a></li>
+            <li><a href="friends.html">Друзья</a></li>
+        </ul>
+    </aside>
+    <aside class="page-notes" aria-label="Дополнительная информация">
+        <h2>Об учебной группе</h2>
+        <p>Учимся</p>
+    </aside>
+    <footer>
+        <p>Мой сайт</p>
+    </footer>
+</body>
+</html>
